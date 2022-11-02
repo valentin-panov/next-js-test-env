@@ -1,6 +1,11 @@
 export { default as Header } from "./common/header/header";
 export { default as Footer } from "./common/footer/footer";
 export { default as Main } from "./common/main/main";
-export { default as InVulnerableInput } from "./input/invulnerableInput";
+export { default as MuiInput } from "./muiInput/muiInput";
 export { default as ExampleRouter } from "./exampleRouter/exampleRouter";
 export { default as LocationHref } from "./locationHref/locationHref";
+export { default as ClassicInput } from "./classicInput/classicInput";
+export { default as DSIH } from "./dSIH/DSIH";
+export { default as RefInnerHTML } from "./refInnerHTML/refInnerHTML";
+export { default as ClassN } from "./classN/classN";
+export { default as HtmlAttr } from "./htmlAttr/HtmlAttr";

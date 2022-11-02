@@ -12,9 +12,9 @@ const LocationHref: React.FC<VulnerableProps> = ({ route }) => {
 
   return (
     <div>
-      <h3>window.location.href = {route}</h3>
+      <h2>window.location.href = {route}</h2>
       <Button variant="outlined" onClick={() => windowLocationButton(route)}>
-        GO
+        TRY ME!
       </Button>
     </div>
   );

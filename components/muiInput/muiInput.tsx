@@ -6,7 +6,7 @@ interface VulnerableProps {
   onChangeHandler: (value: string) => void;
 }
 
-const InvulnerableInput: React.FC<VulnerableProps> = ({
+const MuiInput: React.FC<VulnerableProps> = ({
   inputString,
   onChangeHandler,
 }) => {
@@ -19,9 +19,11 @@ const InvulnerableInput: React.FC<VulnerableProps> = ({
       noValidate
       autoComplete="off"
     >
+      <h2>MUI INPUT</h2>
       <TextField
         id="outlined-user-input"
         label="MUI INPUT"
+        variant={"outlined"}
         value={inputString}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
           onChangeHandler(event.target.value)
@@ -31,4 +33,4 @@ const InvulnerableInput: React.FC<VulnerableProps> = ({
   );
 };
 
-export default InvulnerableInput;
+export default MuiInput;

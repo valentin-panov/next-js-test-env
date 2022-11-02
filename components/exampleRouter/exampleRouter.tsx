@@ -1,19 +1,54 @@
 import React from "react";
 import Router from "next/router";
+import {
+  Button,
+  FormControl,
+  FormControlLabel,
+  Radio,
+  RadioGroup,
+} from "@mui/material";
 
 interface VulnerableProps {
   route: string;
+  basePath: string;
 }
 
-const ExampleRouter: React.FC<VulnerableProps> = ({ route }) => {
-  const router = async (url: string): Promise<void> => {
-    await Router.push(`${url}`);
+const ExampleRouter: React.FC<VulnerableProps> = ({ route, basePath }) => {
+  const [switcher, setSwitcher] = React.useState<string>("0");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSwitcher((event.target as HTMLInputElement).value);
+  };
+
+  const router = async (url: string, switcher: string): Promise<void> => {
+    const payload = `${switcher === "1" ? basePath : ""}${url}`;
+    console.log(payload);
+    await Router.push(payload);
   };
 
   return (
-    <div>
-      <h3>next/router.push({route})</h3>
-      <button onClick={() => router(route)}>PUSH</button>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <h2>next/router.push(basePath + route)</h2>
+      <FormControl>
+        <RadioGroup
+          aria-labelledby="demo-controlled-radio-buttons-group"
+          name="controlled-radio-buttons-group"
+          value={switcher}
+          onChange={handleChange}
+        >
+          <FormControlLabel value="0" control={<Radio />} label={route} />
+          <FormControlLabel
+            value="1"
+            control={<Radio />}
+            label={`${basePath}${route}`}
+          />
+        </RadioGroup>
+      </FormControl>
+      <Button variant={"outlined"} onClick={() => router(route, switcher)}>
+        TRY ME!
+      </Button>
     </div>
   );
 };

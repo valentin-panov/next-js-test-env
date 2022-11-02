@@ -1,105 +1,75 @@
 import styles from "../styles/Home.module.css";
 import {
+  ClassicInput,
+  ClassN,
+  DSIH,
   ExampleRouter,
   Footer,
   Header,
-  InVulnerableInput,
+  HtmlAttr,
   LocationHref,
   Main,
+  MuiInput,
+  RefInnerHTML,
 } from "../components";
-import React, { useMemo, useRef } from "react";
+import React from "react";
+
+const basePath = "http://localhost:3000/";
 
 export default function Home() {
-  const [invulnerableInputString, setInvulnerableInputString] = React.useState(
+  const [muiInputString, setMuiInputString] = React.useState(
     '" onclick=alert("XSS")>"@x.y'
   );
-  const [vulnerableInputString, setVulnerableInputString] = React.useState(
+  const [classicInputString, setClassicInputString] = React.useState(
     '"; onload=alert(1);'
   );
-  const codeRef = useRef(null);
 
-  const onChangeInvulnerableInputHandler = (value: string) => {
-    setInvulnerableInputString(value);
+  const onChangeMuiInputHandler = (value: string) => {
+    setMuiInputString(value);
+    setClassicInputString(value);
   };
 
   const onChangeInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setVulnerableInputString(event.target.value);
-    if (codeRef.current) {
-      const element = codeRef.current as HTMLElement;
-      element.innerHTML = vulnerableInputString;
-    }
+    setClassicInputString(event.target.value);
+    setMuiInputString(event.target.value);
   };
-
-  const xssObject = useMemo((): Record<string, string> => {
-    return {
-      id: invulnerableInputString,
-      "aria-label": invulnerableInputString,
-    };
-  }, [invulnerableInputString]);
 
   return (
     <div className={styles.container}>
       <Header />
       <Main>
-        <h1 className={styles.title}>Extremely vulnerable NextApp</h1>
+        <h1 className={styles.title}>Vulnerable NextApp</h1>
 
         <div className={styles.grid}>
           <div className={styles.card}>
-            <label htmlFor={"clIn"}>Classic Input</label>
-            <input
-              id="clIn"
-              value={vulnerableInputString}
-              onChange={onChangeInputHandler}
+            <ClassicInput
+              value={classicInputString}
+              onChangeHandler={onChangeInputHandler}
             />
           </div>
           <div className={styles.card}>
-            <InVulnerableInput
-              inputString={invulnerableInputString}
-              onChangeHandler={onChangeInvulnerableInputHandler}
+            <MuiInput
+              inputString={muiInputString}
+              onChangeHandler={onChangeMuiInputHandler}
             />
           </div>
           <div className={styles.card}>
-            <ExampleRouter route={vulnerableInputString} />
-          </div>{" "}
-          <div className={styles.card}>
-            <LocationHref route={invulnerableInputString} />
+            <ExampleRouter route={classicInputString} basePath={basePath} />
           </div>
           <div className={styles.card}>
-            Classic input string:
-            <br />
-            {vulnerableInputString}
-            <br />
-            is injected into dangerouslySetInnerHTML
-            <script
-              data-testid="data-layer"
-              dangerouslySetInnerHTML={{
-                __html: `window.digitalData=${JSON.stringify(
-                  vulnerableInputString
-                )}`,
-              }}
-            />
+            <LocationHref route={classicInputString} />
           </div>
           <div className={styles.card}>
-            Classic input string:
-            <br />
-            {vulnerableInputString}
-            <br />
-            is injected through ref.current.innerHTML:
-            <br />
-            <code className={styles.description} ref={codeRef}>
-              NULL
-            </code>
+            <DSIH value={classicInputString} />
           </div>
           <div className={styles.card}>
-            <p className={styles.description + invulnerableInputString}>
-              Here is className xss try{" "}
-              <code className={styles.code}>{invulnerableInputString}</code>
-            </p>
+            <RefInnerHTML value={classicInputString} />
           </div>
           <div className={styles.card}>
-            <div {...xssObject}>
-              DIV HTML ATTRIBUTES {`{...props} = ${JSON.stringify(xssObject)}`}
-            </div>
+            <ClassN value={classicInputString} />
+          </div>
+          <div className={styles.card}>
+            <HtmlAttr value={classicInputString} />
           </div>
         </div>
       </Main>
