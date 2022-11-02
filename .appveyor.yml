@@ -15,7 +15,7 @@ install:
 build: off
 
 build_script:
-  - npm run next build
+  - npm run build
 
 deploy_script:
   - git config --global credential.helper store
