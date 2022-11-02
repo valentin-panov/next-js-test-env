@@ -30,3 +30,6 @@ const RefInnerHTML: React.FC<VulnerableProps> = ({ value }) => {
 };
 
 export default RefInnerHTML;
+
+// worked xss
+// <img src=xxx:x onerror=javascript:alert(1)> -->

@@ -1,0 +1,24 @@
+image: Ubuntu1804
+
+stack: node 16
+
+branches:
+  only:
+    - master
+
+cache: node_modules
+
+install:
+  - npm install
+
+build: off
+
+build_script:
+  - npm run build
+
+deploy_script:
+  - git config --global credential.helper store
+  - git config --global user.name AppVeyor
+  - git config --global user.email ci@appveyor.com
+  - echo "https://$GITHUB_TOKEN:x-oauth-basic@github.com" > "$HOME/.git-credentials"
+  - npx push-dir --dir=build --branch=gh-pages --force --verbose

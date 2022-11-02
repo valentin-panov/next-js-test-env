@@ -1,6 +1,7 @@
 {
   "name": "next-js-ts-test-app",
   "version": "0.1.0",
+  "homepage": "https://valentin-panov.github.io/next-js-test-env/",
   "private": true,
   "scripts": {
     "dev": "next dev",
