@@ -2,4 +2,4 @@
 
 WEB VERSION: https://valentin-panov.github.io/next-js-test-env/
 
-worked xss on ref InnerHTML : <img src=xxx:x onerror=javascript:alert(1)>
+worked xss on ref InnerHTML : `<img src=xxx:x onerror=javascript:alert(1)>`
