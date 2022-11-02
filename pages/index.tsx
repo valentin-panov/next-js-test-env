@@ -14,7 +14,7 @@ import {
 } from "../components";
 import React from "react";
 
-const basePath = "http://localhost:3000/";
+const basePath = "https://next-js-test-env.vercel.app";
 
 export default function Home() {
   const [muiInputString, setMuiInputString] = React.useState(
