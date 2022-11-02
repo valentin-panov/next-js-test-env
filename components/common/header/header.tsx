@@ -5,7 +5,7 @@ const Header = () => {
     <Head>
       <title>Create Next App</title>
       <meta name="description" content="Extremely vulnerable next app" />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/public/favicon.ico" />
     </Head>
   );
 };
