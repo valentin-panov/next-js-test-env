@@ -10,11 +10,11 @@ import {
 
 interface VulnerableProps {
   route: string;
-  basePath: string;
 }
 
-const ExampleRouter: React.FC<VulnerableProps> = ({ route, basePath }) => {
+const ExampleRouter: React.FC<VulnerableProps> = ({ route }) => {
   const [switcher, setSwitcher] = React.useState<string>("0");
+  const basePath = window.location.href;
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSwitcher((event.target as HTMLInputElement).value);
@@ -22,7 +22,6 @@ const ExampleRouter: React.FC<VulnerableProps> = ({ route, basePath }) => {
 
   const router = async (url: string, switcher: string): Promise<void> => {
     const payload = `${switcher === "1" ? basePath : ""}${url}`;
-    console.log(payload);
     await Router.push(payload);
   };
 
@@ -30,7 +29,7 @@ const ExampleRouter: React.FC<VulnerableProps> = ({ route, basePath }) => {
     <div
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
-      <h2>next/router.push(basePath + route)</h2>
+      <h2>next/router.push(payload)</h2>
       <FormControl>
         <RadioGroup
           aria-labelledby="demo-controlled-radio-buttons-group"

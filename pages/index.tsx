@@ -14,7 +14,7 @@ import {
 } from "../components";
 import React from "react";
 
-const basePath = "https://next-js-test-env.vercel.app/";
+// const basePath = "https://next-js-test-env.vercel.app/";
 
 export default function Home() {
   const [muiInputString, setMuiInputString] = React.useState(
@@ -54,7 +54,7 @@ export default function Home() {
             />
           </div>
           <div className={styles.card}>
-            <ExampleRouter route={classicInputString} basePath={basePath} />
+            <ExampleRouter route={classicInputString} />
           </div>
           <div className={styles.card}>
             <LocationHref route={classicInputString} />
