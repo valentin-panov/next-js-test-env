@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import {
   Button,
@@ -13,8 +13,12 @@ interface VulnerableProps {
 }
 
 const ExampleRouter: React.FC<VulnerableProps> = ({ route }) => {
-  const [switcher, setSwitcher] = React.useState<string>("0");
-  const basePath = window.location.href;
+  const [switcher, setSwitcher] = useState<string>("0");
+  const [basePath, setBasePath] = useState<string>("");
+
+  useEffect(() => {
+    setBasePath(window.location.href);
+  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSwitcher((event.target as HTMLInputElement).value);
