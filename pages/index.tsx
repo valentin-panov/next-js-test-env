@@ -11,6 +11,7 @@ import {
   Main,
   MuiInput,
   RefInnerHTML,
+  WindowOpen,
 } from "../components";
 import React from "react";
 
@@ -70,6 +71,9 @@ export default function Home() {
           </div>
           <div className={styles.card}>
             <HtmlAttr value={classicInputString} />
+          </div>
+          <div className={styles.card}>
+            <WindowOpen value={classicInputString} />
           </div>
         </div>
       </Main>

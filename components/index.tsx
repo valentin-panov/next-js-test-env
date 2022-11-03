@@ -9,3 +9,4 @@ export { default as DSIH } from "./dSIH/DSIH";
 export { default as RefInnerHTML } from "./refInnerHTML/refInnerHTML";
 export { default as ClassN } from "./classN/classN";
 export { default as HtmlAttr } from "./htmlAttr/HtmlAttr";
+export { default as WindowOpen } from "./windowOpen/windowOpen";
