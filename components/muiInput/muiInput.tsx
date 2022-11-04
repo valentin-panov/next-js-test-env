@@ -2,14 +2,11 @@ import React from "react";
 import { Box, TextField } from "@mui/material";
 
 interface VulnerableProps {
-  inputString: string;
+  value: string;
   onChangeHandler: (value: string) => void;
 }
 
-const MuiInput: React.FC<VulnerableProps> = ({
-  inputString,
-  onChangeHandler,
-}) => {
+const MuiInput: React.FC<VulnerableProps> = ({ value, onChangeHandler }) => {
   return (
     <Box
       component="form"
@@ -24,7 +21,7 @@ const MuiInput: React.FC<VulnerableProps> = ({
         id="outlined-user-input"
         label="MUI INPUT"
         variant={"outlined"}
-        value={inputString}
+        value={value}
         onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
           onChangeHandler(event.target.value)
         }
