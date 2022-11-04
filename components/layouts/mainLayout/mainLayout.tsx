@@ -22,6 +22,9 @@ const MainLayout: React.FC<MainProps> = ({ children }) => {
           <Link href="/path" className={styles.title}>
             [ Path Manipulation ]
           </Link>
+          <Link href="/payloads" className={styles.title}>
+            [ Payloads ]
+          </Link>
         </nav>
 
         <Main>{children}</Main>
