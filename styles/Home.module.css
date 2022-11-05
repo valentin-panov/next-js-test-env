@@ -110,13 +110,19 @@
 }
 
 .error {
+    font-size: 2rem;
     color: red;
 }
 
 .link {
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
     color: darkblue;
+}
+
+.link:hover {
+    transition: all;
+    text-decoration: underline;
 }
 
 @media (max-width: 600px) {
