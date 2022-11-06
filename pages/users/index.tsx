@@ -16,7 +16,7 @@ export default function Users({ users }: Props) {
         {users.length > 0 ? (
           users.map((user) => (
             <div className={styles.card} key={user.id}>
-              <Link href={"/users/" + user.id}>
+              <Link href={"/users/[id]"} as={`/users/${user.id}`}>
                 <div>
                   #{user.id}&nbsp;{user.name}
                 </div>
