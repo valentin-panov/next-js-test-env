@@ -8,7 +8,7 @@ import {
 } from "../../components";
 import React from "react";
 
-export default function PathManipulation() {
+export default function Rest() {
   const [inputString, setInputString] = React.useState("javascript:alert(1)");
 
   const onChangeInputHandler = (value: string) => {
@@ -17,7 +17,7 @@ export default function PathManipulation() {
 
   return (
     <MainLayout>
-      <h2>Path manipulation</h2>
+      <h2>REST</h2>
       <div className={styles.grid}>
         <div className={styles.card}>
           <MuiInput

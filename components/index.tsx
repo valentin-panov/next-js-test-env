@@ -14,3 +14,4 @@ export { default as SlugHref } from "./slugHref/slugHref";
 export { default as ClsxTest } from "./clsxTest/clsxTest";
 export { default as ClassnamesTest } from "./classnamesTest/classnamesTest";
 export { default as MainLayout } from "./layouts/mainLayout/mainLayout";
+export { default as MenuLink } from "./common/menuLink/menuLink";

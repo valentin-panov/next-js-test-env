@@ -1,7 +1,6 @@
 import styles from "../../../styles/Home.module.css";
-import { Footer, Header, Main } from "../../../components";
+import { Footer, Header, Main, MenuLink } from "../../../components";
 import React, { ReactNode } from "react";
-import Link from "next/link";
 
 interface MainProps {
   children: ReactNode | ReactNode[];
@@ -13,18 +12,11 @@ const MainLayout: React.FC<MainProps> = ({ children }) => {
       <div className={styles.container}>
         <Header />
         <nav>
-          <Link href={"/"} className={styles.title}>
-            Vulnerable NextApp
-          </Link>
-          <Link href={"/markup"} className={styles.title}>
-            [ Markup Injections ]
-          </Link>
-          <Link href="/path" className={styles.title}>
-            [ Path Manipulation ]
-          </Link>
-          <Link href="/payloads" className={styles.title}>
-            [ Payloads ]
-          </Link>
+          <MenuLink link={"/"} text={"Vulnerable NextApp"}></MenuLink>
+          <MenuLink link={"/markup"} text={"[ Markup Injections ]"}></MenuLink>
+          <MenuLink link="/path" text={"[ Path Manipulation ]"}></MenuLink>
+          <MenuLink link="/users" text={"[ REST ]"}></MenuLink>
+          <MenuLink link="/payloads" text={"[ Payloads ]"}></MenuLink>
         </nav>
 
         <Main>{children}</Main>

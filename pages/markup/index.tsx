@@ -23,6 +23,7 @@ export default function Markup() {
 
   return (
     <MainLayout>
+      <h2>Markup injection</h2>
       <div className={styles.grid}>
         <div className={styles.card}>
           <ClassicInput
