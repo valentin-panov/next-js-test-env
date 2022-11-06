@@ -8,7 +8,7 @@ export default function Error404() {
       <h2 className={styles.error}>Error 404</h2>
       <p className={styles.description}>
         Please{" "}
-        <Link href={"/"} className={styles.link}>
+        <Link href={`${process.env.HOST_URL}`} className={styles.link}>
           go back
         </Link>{" "}
         to safety
