@@ -16,7 +16,7 @@ export default function PathManipulation() {
   };
 
   return (
-    <MainLayout>
+    <MainLayout keywords={"path, manipulation"}>
       <h2>Path manipulation</h2>
       <div className={styles.grid}>
         <div className={styles.card}>

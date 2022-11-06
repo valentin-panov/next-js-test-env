@@ -22,7 +22,7 @@ export default function Markup() {
   };
 
   return (
-    <MainLayout>
+    <MainLayout keywords={"markup, injection"}>
       <h2>Markup injection</h2>
       <div className={styles.grid}>
         <div className={styles.card}>
