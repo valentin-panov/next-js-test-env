@@ -9,7 +9,9 @@ import {
 import React from "react";
 
 export default function PathManipulation() {
-  const [inputString, setInputString] = React.useState("javascript:alert(1)");
+  const [inputString, setInputString] = React.useState(
+    "javascript:alert(document.cookie.split(';'))"
+  );
 
   const onChangeInputHandler = (value: string) => {
     setInputString(value);
