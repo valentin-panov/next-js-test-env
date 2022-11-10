@@ -1,6 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-export default function getById(req: NextApiRequest, res: NextApiResponse) {
+export default function putTheCookies(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Set-Cookie", [
     `query=${req.query.id}; path=/; `,
