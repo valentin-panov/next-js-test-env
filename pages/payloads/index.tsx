@@ -6,9 +6,7 @@ import CookieOutlinedIcon from "@mui/icons-material/CookieOutlined";
 
 export default function Payloads() {
   const [isLoading, setLoading] = useState(false);
-  const [inputString, setInputString] = React.useState(
-    "javascript:alert(document.cookie.split(';'))"
-  );
+  const [inputString, setInputString] = React.useState("test cookie");
 
   const onChangeInputHandler = (value: string) => {
     setInputString(value);
