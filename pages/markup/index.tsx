@@ -34,7 +34,7 @@ export default function Markup() {
         </div>
         <div className={styles.card}>
           <DSIH value={classicInputString} />
-        </div>{" "}
+        </div>
         <div className={styles.card}>
           <DSIHDataLayer value={classicInputString} />
         </div>
