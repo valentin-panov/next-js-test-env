@@ -6,6 +6,7 @@ export { default as ExampleRouter } from "./exampleRouter/exampleRouter";
 export { default as LocationHref } from "./locationHref/locationHref";
 export { default as ClassicInput } from "./classicInput/classicInput";
 export { default as DSIH } from "./dSIH/DSIH";
+export { default as DSIHDataLayer } from "./dSIHDataLayer/DSIHDataLayer";
 export { default as RefInnerHTML } from "./refInnerHTML/refInnerHTML";
 export { default as ClassN } from "./classN/classN";
 export { default as HtmlAttr } from "./htmlAttr/HtmlAttr";

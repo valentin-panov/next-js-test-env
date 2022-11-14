@@ -5,6 +5,7 @@ import {
   ClassnamesTest,
   ClsxTest,
   DSIH,
+  DSIHDataLayer,
   HtmlAttr,
   MainLayout,
   RefInnerHTML,
@@ -31,9 +32,11 @@ export default function Markup() {
             onChangeHandler={onChangeInputHandler}
           />
         </div>
-
         <div className={styles.card}>
           <DSIH value={classicInputString} />
+        </div>{" "}
+        <div className={styles.card}>
+          <DSIHDataLayer value={classicInputString} />
         </div>
         <div className={styles.card}>
           <RefInnerHTML value={classicInputString} />
@@ -50,7 +53,6 @@ export default function Markup() {
         <div className={styles.card}>
           <HtmlAttr value={classicInputString} />
         </div>
-
         <div className={styles.card}>
           <SlugHref value={classicInputString} />
         </div>

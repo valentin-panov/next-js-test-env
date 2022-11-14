@@ -5,15 +5,16 @@ interface VulnerableProps {
   value: string;
 }
 
-const DSIH: React.FC<VulnerableProps> = ({ value }) => {
+const DSIHDataLayer: React.FC<VulnerableProps> = ({ value }) => {
   return (
     <>
-      <h2>dangerouslySetInnerHTML in div</h2>
+      <h2>dangerouslySetInnerHTML window.digitalData=payload</h2>
       <div className={styles.code}>
         inspect me!
-        <div
+        <script
+          data-testid="data-layer"
           dangerouslySetInnerHTML={{
-            __html: `${value}`,
+            __html: `window.digitalData=${JSON.stringify(value)}`,
           }}
         />
       </div>
@@ -21,4 +22,4 @@ const DSIH: React.FC<VulnerableProps> = ({ value }) => {
   );
 };
 
-export default DSIH;
+export default DSIHDataLayer;
