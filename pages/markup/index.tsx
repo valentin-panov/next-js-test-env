@@ -4,6 +4,7 @@ import {
   ClassN,
   ClassnamesTest,
   ClsxTest,
+  CreateElement,
   DSIH,
   DSIHDataLayer,
   HtmlAttr,
@@ -55,6 +56,15 @@ export default function Markup() {
         </div>
         <div className={styles.card}>
           <SlugHref value={classicInputString} />
+        </div>{" "}
+        <div className={styles.card}>
+          <CreateElement
+            value={"div"}
+            props={{ "data-label": classicInputString }}
+          >
+            <h2>{`React.createElement(type, props, children) with payload=${classicInputString}`}</h2>
+            {classicInputString}
+          </CreateElement>
         </div>
       </div>
     </MainLayout>
