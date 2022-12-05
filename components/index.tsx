@@ -17,3 +17,4 @@ export { default as ClassnamesTest } from "./classnamesTest/classnamesTest";
 export { default as MainLayout } from "./layouts/mainLayout/mainLayout";
 export { default as MenuLink } from "./common/menuLink/menuLink";
 export { default as CreateElement } from "./createElement/createElement";
+export { default as NextImage } from "./nextImage/nextImage";

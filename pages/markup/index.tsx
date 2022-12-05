@@ -9,6 +9,7 @@ import {
   DSIHDataLayer,
   HtmlAttr,
   MainLayout,
+  NextImage,
   RefInnerHTML,
   SlugHref,
 } from "../../components";
@@ -16,7 +17,7 @@ import React from "react";
 
 export default function Markup() {
   const [classicInputString, setClassicInputString] = React.useState(
-    '"; onload=alert(1);'
+    "/<img src=xxx:x onerror=alert(event.currentTarget.parentNode)> -->"
   );
 
   const onChangeInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +57,7 @@ export default function Markup() {
         </div>
         <div className={styles.card}>
           <SlugHref value={classicInputString} />
-        </div>{" "}
+        </div>
         <div className={styles.card}>
           <CreateElement
             value={"div"}
@@ -65,6 +66,9 @@ export default function Markup() {
             <h2>{`React.createElement(type, props, children) with payload=${classicInputString}`}</h2>
             {classicInputString}
           </CreateElement>
+        </div>
+        <div className={styles.card}>
+          <NextImage value={classicInputString}></NextImage>
         </div>
       </div>
     </MainLayout>
