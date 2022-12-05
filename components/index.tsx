@@ -18,3 +18,4 @@ export { default as MainLayout } from "./layouts/mainLayout/mainLayout";
 export { default as MenuLink } from "./common/menuLink/menuLink";
 export { default as CreateElement } from "./createElement/createElement";
 export { default as NextImage } from "./nextImage/nextImage";
+export { default as DataTestId } from "./dataTestId/dataTestId";

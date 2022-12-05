@@ -1,25 +1,22 @@
 import React from "react";
 import styles from "../../styles/Home.module.css";
-import Image from "next/image";
 
 interface VulnerableProps {
   value: string;
 }
 
-const NextImage: React.FC<VulnerableProps> = ({ value }) => {
+const DataTestId: React.FC<VulnerableProps> = ({ value }) => {
   return (
     <>
       <h2>div.data-testid=testId</h2>
-      <p className={styles.description}>
+      <div className={styles.description} data-testId={value}>
         Inspect me!
-        <br />
-        <Image alt="nextImage" src={value} width={30} height={30} />
-      </p>
+      </div>
     </>
   );
 };
 
-export default NextImage;
+export default DataTestId;
 
 // worked xss
 // <img src=xxx:x onerror=javascript:alert(1)> -->
