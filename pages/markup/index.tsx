@@ -6,6 +6,7 @@ import {
   ClsxTest,
   CreateElement,
   DataTestId,
+  DecodeHTML,
   DSIH,
   DSIHDataLayer,
   HtmlAttr,
@@ -72,6 +73,9 @@ export default function Markup() {
         {/*</div>*/}
         <div className={styles.card}>
           <DataTestId value={classicInputString}></DataTestId>
+        </div>
+        <div className={styles.card}>
+          <DecodeHTML value={classicInputString} />
         </div>
       </div>
     </MainLayout>
