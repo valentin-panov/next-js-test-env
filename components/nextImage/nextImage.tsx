@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/Home.module.css";
-import Image from "next/image";
+import { Image } from "../../packages";
 
 interface VulnerableProps {
   value: string;
@@ -9,11 +9,11 @@ interface VulnerableProps {
 const NextImage: React.FC<VulnerableProps> = ({ value }) => {
   return (
     <>
-      <h2>div.data-testid=testId</h2>
+      <h2>Image package test</h2>
       <p className={styles.description}>
         Inspect me!
         <br />
-        <Image alt="nextImage" src={value} width={30} height={30} />
+        <Image alt="testImage" src={value} lazyLoaded={false} />
       </p>
     </>
   );

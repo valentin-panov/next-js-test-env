@@ -11,6 +11,7 @@ import {
   DSIHDataLayer,
   HtmlAttr,
   MainLayout,
+  NextImage,
   RefInnerHTML,
   SlugHref,
 } from "../../components";
@@ -68,9 +69,9 @@ export default function Markup() {
             {classicInputString}
           </CreateElement>
         </div>
-        {/*<div className={styles.card}>*/}
-        {/*  <NextImage value={classicInputString}></NextImage>*/}
-        {/*</div>*/}
+        <div className={styles.card}>
+          <NextImage value={classicInputString}></NextImage>
+        </div>
         <div className={styles.card}>
           <DataTestId value={classicInputString}></DataTestId>
         </div>

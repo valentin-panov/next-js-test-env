@@ -1,5 +1,5 @@
 import styles from "../../styles/Home.module.css";
-import { MainLayout, MuiInput } from "../../components";
+import { MainLayout, MuiInput, NextImage } from "../../components";
 import React, { useState } from "react";
 import { Button, CircularProgress } from "@mui/material";
 import CookieOutlinedIcon from "@mui/icons-material/CookieOutlined";
@@ -70,6 +70,9 @@ export default function Payloads() {
           >
             https://github.com/payloadbox/xss-payload-list
           </a>
+        </div>
+        <div className={styles.card}>
+          <NextImage value={inputString} />
         </div>
       </div>
     </MainLayout>
