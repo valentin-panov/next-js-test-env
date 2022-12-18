@@ -24,7 +24,6 @@ export default function Payloads() {
   const fetchCookies = () => {
     setLoading(true);
     try {
-      console.log(opts);
       fetch(`/api/echo/${inputString}`, opts)
         .then((res) => res.json())
         .then((data) => {
