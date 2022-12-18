@@ -19,9 +19,13 @@ interface VulnerableProps {
  * is decoded to  "<p>Picture messages may not be included in your plan.</p>"
  */
 export function decodeHtml(unsafeText: string): string {
-  const txt = document.createElement("textarea");
-  txt.innerHTML = unsafeText;
-  return txt.value;
+  if (typeof window !== "undefined") {
+    const txt = window.document.createElement("textarea");
+    txt.innerHTML = unsafeText;
+    return txt.value;
+  } else {
+    return "";
+  }
 }
 
 const DecodeHTML: React.FC<VulnerableProps> = ({ value }) => {
