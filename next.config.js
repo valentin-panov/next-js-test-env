@@ -6,6 +6,7 @@ const nextConfig = {
   swcMinify: true,
   env: {
     HOST_URL: process.env.HOST_URL,
+    API_TOKEN: process.env.API_TOKEN,
   },
 };
 

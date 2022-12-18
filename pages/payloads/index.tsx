@@ -12,10 +12,20 @@ export default function Payloads() {
     setInputString(value);
   };
 
+  const headers: HeadersInit = {
+    "Content-Type": "application/json",
+    Authorization: `Bearer ${process.env.API_TOKEN}`,
+  };
+  const opts: RequestInit = {
+    method: "GET",
+    headers,
+  };
+
   const fetchCookies = () => {
     setLoading(true);
     try {
-      fetch(`/api/echo/${inputString}`)
+      console.log(opts);
+      fetch(`/api/echo/${inputString}`, opts)
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
