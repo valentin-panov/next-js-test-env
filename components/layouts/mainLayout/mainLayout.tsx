@@ -23,11 +23,11 @@ const MainLayout: React.FC<MainProps> = ({ children, keywords }) => {
         <Header />
         <nav>
           <MenuLink link={"/"} text={"Vulnerable NextApp"}></MenuLink>
-          <MenuLink link={"/markup"} text={"[ Markup  ]"}></MenuLink>
-          <MenuLink link="/path" text={"[ Path  ]"}></MenuLink>
-          <MenuLink link="/queryInjection?payload=" text={"[ URL ]"}></MenuLink>
-          <MenuLink link="/payloads" text={"[ Cookies ]"}></MenuLink>
-          <MenuLink link="/users" text={"[ REST ]"}></MenuLink>
+          <MenuLink link={"/markup"} text={"Markup"}></MenuLink>
+          <MenuLink link="/path" text={"Path"}></MenuLink>
+          <MenuLink link="/queryInjection?payload=" text={"URL"}></MenuLink>
+          <MenuLink link="/payloads" text={"Cookies"}></MenuLink>
+          <MenuLink link="/users" text={"Auth"}></MenuLink>
         </nav>
 
         <Main>{children}</Main>

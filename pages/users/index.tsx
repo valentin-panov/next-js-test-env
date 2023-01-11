@@ -3,6 +3,7 @@ import { MainLayout } from "../../components";
 import React from "react";
 import { IUser } from "../../interfaces/user";
 import Link from "next/link";
+import AuthModule from "../../components/authModule/authModule";
 
 interface Props {
   users: IUser[];
@@ -11,7 +12,8 @@ interface Props {
 export default function Users({ users }: Props) {
   return (
     <MainLayout>
-      <h2>REST</h2>
+      <h2>AUTHORIZATION</h2>
+      <AuthModule />
       <div className={styles.grid}>
         {users.length > 0 ? (
           users.map((user) => (
