@@ -1,6 +1,6 @@
 import styles from "../../styles/Home.module.css";
-import { MainLayout } from "../../components";
-import React from "react";
+import { MainLayout, UserCard } from "../../components";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { NextPageContext } from "next";
 import { IUser } from "../../interfaces/user";
@@ -11,17 +11,17 @@ interface Props {
 
 export default function User({ user }: Props) {
   const { query } = useRouter();
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem("ROLE") === "admin");
+  }, []);
+
   return (
     <MainLayout>
-      <h2>Query injection</h2>
+      <h2>Query injection. User role: {isAdmin ? "admin" : "non-admin"}</h2>
       <div className={styles.grid}>
         {user ? (
-          <div className={styles.card}>
-            <p>{user.name}</p>
-            <p>{user.email}</p>
-            <p>{user.phone}</p>
-            <p>{user.address.city}</p>
-          </div>
+          <UserCard value={user} />
         ) : (
           <div className={styles.card}>User ID#{query.id} was not found.</div>
         )}

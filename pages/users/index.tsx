@@ -1,39 +1,47 @@
 import styles from "../../styles/Home.module.css";
-import { MainLayout } from "../../components";
-import React from "react";
+import { AuthModule, MainLayout } from "../../components";
+import React, { useEffect, useState } from "react";
 import { IUser } from "../../interfaces/user";
 import Link from "next/link";
-import AuthModule from "../../components/authModule/authModule";
 
 interface Props {
   users: IUser[];
 }
 
 export default function Users({ users }: Props) {
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
+  useEffect(() => {
+    setIsAdmin(localStorage.getItem("ROLE") === "admin");
+  }, []);
+
   return (
     <MainLayout>
       <h2>AUTHORIZATION</h2>
-      <AuthModule />
-      <div className={styles.grid}>
-        {users.length > 0 ? (
-          users.map((user) => (
-            <div
-              className={styles.card}
-              key={user.id}
-              id={`user-id-${user.id}`}
-            >
-              <Link href={"/users/[id]"} as={`/users/${user.id}`}>
-                <div>
-                  #{user.id}&nbsp;{user.name}
-                </div>
-                <div>{user.email}</div>
-              </Link>
-            </div>
-          ))
-        ) : (
-          <div className={styles.card}>No data came from server</div>
-        )}
-      </div>
+      <AuthModule admin={{ isAdmin, setIsAdmin }} />
+      {isAdmin ? (
+        <div className={styles.grid}>
+          {users.length > 0 ? (
+            users.map((user) => (
+              <div
+                className={styles.card}
+                key={user.id}
+                id={`user-id-${user.id}`}
+              >
+                <Link href={"/users/[id]"} as={`/users/${user.id}`}>
+                  <div>
+                    #{user.id}&nbsp;{user.name}
+                  </div>
+                  <div>{user.email}</div>
+                </Link>
+              </div>
+            ))
+          ) : (
+            <div className={styles.card}>No data came from server</div>
+          )}
+        </div>
+      ) : (
+        <div>You must have admin role to see users data</div>
+      )}
     </MainLayout>
   );
 }

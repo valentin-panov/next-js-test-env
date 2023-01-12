@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   FormControl,
   FormControlLabel,
@@ -7,27 +7,29 @@ import {
   Switch,
 } from "@mui/material";
 
-interface VulnerableProps {}
+interface VulnerableProps {
+  admin: {
+    isAdmin: boolean;
+    setIsAdmin: (arg0: boolean) => void;
+  };
+}
 
-const AuthModule: React.FC<VulnerableProps> = () => {
-  const [admin, setAdmin] = useState(false);
-  useEffect(() => {
-    setAdmin(localStorage.getItem("ROLE") === "admin");
-  }, []);
+const AuthModule: React.FC<VulnerableProps> = ({
+  admin: { isAdmin, setIsAdmin },
+}) => {
   const handleChange = () => {
-    localStorage.setItem("ROLE", admin ? "admin" : "user");
-    setAdmin(!admin);
+    localStorage.setItem("ROLE", !isAdmin ? "admin" : "non-admin");
+    setIsAdmin(!isAdmin);
   };
 
   return (
     <>
-      <h2>Admin switcher</h2>
       <FormControl component="fieldset" variant="standard">
-        <FormLabel component="legend">Assign responsibility</FormLabel>
+        <FormLabel component="legend">Grant role</FormLabel>
         <FormGroup>
           <FormControlLabel
             control={
-              <Switch checked={!admin} onChange={handleChange} name="admin" />
+              <Switch checked={isAdmin} onChange={handleChange} name="admin" />
             }
             label="Admin"
           />
