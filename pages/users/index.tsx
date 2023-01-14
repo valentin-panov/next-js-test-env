@@ -16,7 +16,7 @@ export default function Users({ users }: Props) {
 
   return (
     <MainLayout>
-      <h2>AUTHORIZATION ISSUES</h2>
+      <h2>VULNERABLE AUTHORIZATION</h2>
       <AuthModule admin={{ isAdmin, setIsAdmin }} />
       {isAdmin ? (
         <div className={styles.grid}>

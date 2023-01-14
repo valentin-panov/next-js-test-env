@@ -10,7 +10,8 @@ const Menu = () => {
       <MenuLink link="/path" text={"Path"}></MenuLink>
       <MenuLink link="/queryInjection?payload=" text={"URL"}></MenuLink>
       <MenuLink link="/payloads" text={"Cookies"}></MenuLink>
-      <MenuLink link="/users" text={"Auth"}></MenuLink>
+      <MenuLink link="/users" text={"Auth-V"}></MenuLink>
+      <MenuLink link="/users/secure" text={"Auth-S"}></MenuLink>
       <style jsx>{`
         nav {
           position: fixed;

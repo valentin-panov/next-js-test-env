@@ -1,14 +1,14 @@
 import styles from "../../styles/Home.module.css";
-import { MainLayout } from "../../components";
+import { MainLayout } from "../../../components";
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { NextPageContext } from "next";
-import { IUser } from "../../interfaces/IUser";
+import { IUser } from "../../../interfaces/IUser";
 import { Box, LinearProgress } from "@mui/material";
 
-const UserCard = lazy(() => import("../../components/userCard/userCard"));
+const UserCard = lazy(() => import("../../../components/userCard/userCard"));
 const Redirect = lazy(
-  () => import("../../components/nextRedirect/nextRedirect")
+  () => import("../../../components/nextRedirect/nextRedirect")
 );
 
 interface Props {
@@ -53,6 +53,7 @@ export default function User({ user }: Props) {
   );
 }
 
+// TODO inject the check into the =>
 export async function getServerSideProps(context: NextPageContext) {
   const { id } = context.query;
   try {
