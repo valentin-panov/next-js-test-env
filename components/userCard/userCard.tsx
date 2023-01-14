@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "../../styles/Home.module.css";
-import { IUser } from "../../interfaces/user";
+import { IUser } from "../../interfaces/IUser";
 
 interface VulnerableProps {
   value: IUser;

@@ -1,7 +1,7 @@
 import styles from "../../styles/Home.module.css";
 import { AuthModule, MainLayout } from "../../components";
 import React, { useEffect, useState } from "react";
-import { IUser } from "../../interfaces/user";
+import { IUser } from "../../interfaces/IUser";
 import Link from "next/link";
 
 interface Props {
@@ -16,7 +16,7 @@ export default function Users({ users }: Props) {
 
   return (
     <MainLayout>
-      <h2>AUTHORIZATION</h2>
+      <h2>AUTHORIZATION ISSUES</h2>
       <AuthModule admin={{ isAdmin, setIsAdmin }} />
       {isAdmin ? (
         <div className={styles.grid}>

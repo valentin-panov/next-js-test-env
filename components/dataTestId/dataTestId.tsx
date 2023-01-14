@@ -9,7 +9,7 @@ const DataTestId: React.FC<VulnerableProps> = ({ value }) => {
   return (
     <>
       <h2>div.data-testid=testId</h2>
-      <div className={styles.description} data-testId={value}>
+      <div className={styles.description} data-testid={value}>
         Inspect me!
       </div>
     </>

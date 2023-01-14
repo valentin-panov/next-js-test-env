@@ -40,10 +40,10 @@ export default function Markup() {
           <DSIH value={classicInputString} />
         </div>
         <div className={styles.card}>
-          <DSIHDataLayer value={classicInputString} />
+          <RefInnerHTML value={classicInputString} />
         </div>
         <div className={styles.card}>
-          <RefInnerHTML value={classicInputString} />
+          <DSIHDataLayer value={classicInputString} />
         </div>
         <div className={styles.card}>
           <ClassN value={classicInputString} />

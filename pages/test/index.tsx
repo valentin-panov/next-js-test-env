@@ -1,11 +1,5 @@
 import styles from "../../styles/Home.module.css";
-import {
-  ExampleRouter,
-  LocationHref,
-  MainLayout,
-  MuiInput,
-  WindowOpen,
-} from "../../components";
+import { ExampleRouter, MainLayout, MuiInput } from "../../components";
 import React from "react";
 
 export default function Rest() {
@@ -28,12 +22,6 @@ export default function Rest() {
 
         <div className={styles.card}>
           <ExampleRouter route={inputString} />
-        </div>
-        <div className={styles.card}>
-          <LocationHref route={inputString} />
-        </div>
-        <div className={styles.card}>
-          <WindowOpen value={inputString} />
         </div>
       </div>
     </MainLayout>

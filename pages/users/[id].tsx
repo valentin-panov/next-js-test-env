@@ -3,7 +3,7 @@ import { MainLayout } from "../../components";
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { NextPageContext } from "next";
-import { IUser } from "../../interfaces/user";
+import { IUser } from "../../interfaces/IUser";
 import { Box, LinearProgress } from "@mui/material";
 
 const UserCard = lazy(() => import("../../components/userCard/userCard"));
@@ -53,6 +53,7 @@ export default function User({ user }: Props) {
   );
 }
 
+// TODO inject the check into the =>
 export async function getServerSideProps(context: NextPageContext) {
   const { id } = context.query;
   try {
