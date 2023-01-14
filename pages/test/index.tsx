@@ -1,12 +1,12 @@
 import styles from "../../styles/Home.module.css";
-import { ExampleRouter, MainLayout, MuiInput } from "../../components";
+import { ClassicInput, ExampleRouter, MainLayout } from "../../components";
 import React from "react";
 
 export default function Rest() {
   const [inputString, setInputString] = React.useState("javascript:alert(1)");
 
-  const onChangeInputHandler = (value: string) => {
-    setInputString(value);
+  const onChangeInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputString(event.target.value);
   };
 
   return (
@@ -14,7 +14,7 @@ export default function Rest() {
       <h2>REST</h2>
       <div className={styles.grid}>
         <div className={styles.card}>
-          <MuiInput
+          <ClassicInput
             value={inputString}
             onChangeHandler={onChangeInputHandler}
           />
