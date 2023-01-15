@@ -1,4 +1,4 @@
-import styles from "../../styles/Home.module.css";
+import styles from "../../../styles/Home.module.css";
 import { MainLayout } from "../../../components";
 import React, { lazy, Suspense, useEffect, useState } from "react";
 import { useRouter } from "next/router";
