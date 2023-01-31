@@ -4,6 +4,7 @@ export default function putTheCookies(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  console.log(req.query.payload);
   res.setHeader("Content-Type", "application/json");
   res.setHeader("Set-Cookie", [
     `cookieHost=${req.headers.host}; path=/; `,
