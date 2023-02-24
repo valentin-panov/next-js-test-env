@@ -23,3 +23,4 @@ export { default as DataTestId } from "./dataTestId/dataTestId";
 export { default as DecodeHTML } from "./decodeHTML/decodeHTML";
 export { default as AuthModule } from "./authModule/authModule";
 export { default as UserCard } from "./userCard/userCard";
+export { default as FormAction } from "./formAction/formAction";

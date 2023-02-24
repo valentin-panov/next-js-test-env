@@ -1,5 +1,5 @@
 import styles from "../../styles/Home.module.css";
-import { ClassicInput, ExampleRouter, MainLayout } from "../../components";
+import { ClassicInput, ExampleRouter, FormAction, MainLayout } from "../../components";
 import React from "react";
 
 export default function Rest() {
@@ -21,7 +21,7 @@ export default function Rest() {
         </div>
 
         <div className={styles.card}>
-          <ExampleRouter route={inputString} />
+          <FormAction value={inputString} />
         </div>
       </div>
     </MainLayout>
