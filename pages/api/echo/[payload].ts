@@ -1,5 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+const token = "sdfasdfasdfasdf";
+const expiresAt = "123123123124124123123";
+
 export default function putTheCookies(
   req: NextApiRequest,
   res: NextApiResponse
@@ -17,6 +20,7 @@ export default function putTheCookies(
     `__Host-cookie=${req.query.payload}; path=/; `,
     `__Secure-cookie=${req.query.payload}; path=/; `,
     `sameSiteNone=${req.query.payload}; path=/; samesite=none;`,
+    `refresh-token=${token}; Expires=${expiresAt}; Secure; SameSite=Lax; HttpOnly=true;`,
   ]);
 
   res.status(200).json({ yourId: req.query.payload });
