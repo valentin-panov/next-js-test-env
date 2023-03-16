@@ -1,6 +1,7 @@
 import styles from "../../styles/Home.module.css";
-import { ClassicInput, ExampleRouter, MainLayout } from "../../components";
+import { ClassicInput, MainLayout } from "../../components";
 import React from "react";
+import { Link } from "../../packages";
 
 export default function Rest() {
   const [inputString, setInputString] = React.useState("javascript:alert(1)");
@@ -21,7 +22,7 @@ export default function Rest() {
         </div>
 
         <div className={styles.card}>
-          <ExampleRouter route={inputString} />
+          <Link href={inputString}>{inputString}</Link>
         </div>
       </div>
     </MainLayout>
