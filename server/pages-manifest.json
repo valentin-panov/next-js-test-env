@@ -1,0 +1,19 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html",
+  "/api/ctx/[payload]": "pages/api/ctx/[payload].js",
+  "/api/echo": "pages/api/echo.js",
+  "/api/echo/[payload]": "pages/api/echo/[payload].js",
+  "/": "pages/index.html",
+  "/markup": "pages/markup.html",
+  "/path": "pages/path.html",
+  "/payloads": "pages/payloads.html",
+  "/queryInjection": "pages/queryInjection.html",
+  "/test": "pages/test.html",
+  "/users/[id]": "pages/users/[id].js",
+  "/users": "pages/users.js",
+  "/users/secure/[id]": "pages/users/secure/[id].js",
+  "/users/secure": "pages/users/secure.html",
+  "/_document": "pages/_document.js"
+}

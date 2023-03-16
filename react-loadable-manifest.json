@@ -1,0 +1,22 @@
+{
+  "users/[id].tsx -> ../../components/nextRedirect/nextRedirect": {
+    "id": 2423,
+    "files": [
+      "static/chunks/423.7d56c2540f033cde.js"
+    ]
+  },
+  "users/[id].tsx -> ../../components/userCard/userCard": {
+    "id": 8774,
+    "files": []
+  },
+  "users/secure/[id].tsx -> ../../../components/nextRedirect/nextRedirect": {
+    "id": 2423,
+    "files": [
+      "static/chunks/423.7d56c2540f033cde.js"
+    ]
+  },
+  "users/secure/[id].tsx -> ../../../components/userCard/userCard": {
+    "id": 8774,
+    "files": []
+  }
+}
