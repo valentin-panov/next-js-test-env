@@ -18,7 +18,7 @@ export default function Rest() {
             src="https://bug-collection.vercel.app/"
             height="500px"
             width="40%"
-            credentialless="true"
+            {...{ credentialless: true }}
         ></iframe>
         <iframe src="https://bug-collection.vercel.app/" width="40%" height="500px"></iframe>
         {/*<div className={styles.card}>*/}
