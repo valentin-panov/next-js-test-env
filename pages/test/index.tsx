@@ -1,11 +1,18 @@
 import styles from "../../styles/Home.module.css";
 import { ClassicInput, MainLayout } from "../../components";
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import { Link } from "../../packages";
 
 export default function Rest() {
   const [inputString, setInputString] = React.useState("javascript:alert(1)");
+    const iframeRef = useRef<HTMLIFrameElement>(null);
 
+    useEffect(() => {
+        if (iframeRef.current) {
+            // @ts-ignore
+            iframeRef.current.credentialless = true;
+        }
+    }, []);
   const onChangeInputHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputString(event.target.value);
   };
@@ -18,7 +25,7 @@ export default function Rest() {
             src="https://bug-collection.vercel.app/"
             height="500px"
             width="40%"
-            {...{ credentialless: true }}
+            ref={iframeRef}
         ></iframe>
         <iframe src="https://bug-collection.vercel.app/" width="40%" height="500px"></iframe>
         {/*<div className={styles.card}>*/}
